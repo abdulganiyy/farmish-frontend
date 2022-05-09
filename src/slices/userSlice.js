@@ -7,7 +7,7 @@ export const signupUser = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const response = await Axios.post(
-        "http://localhost:6500/api/v1/user/signup",
+        "https://farmish-api.herokuapp.com/api/v1/user/signup",
         data
       );
 
@@ -24,7 +24,7 @@ export const loginUser = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const response = await Axios.post(
-        "http://localhost:6500/api/v1/user/signin",
+        "https://farmish-api.herokuapp.com/api/v1/user/signin",
         data
       );
 
@@ -43,7 +43,7 @@ export const updateUser = createAsyncThunk(
       console.log(data);
       const { id, ...others } = data;
       const response = await Axios.put(
-        `http://localhost:6500/api/v1/user/${id}`,
+        `https://farmish-api.herokuapp.com/api/v1/user/${id}`,
         others,
         {
           headers: {
@@ -71,7 +71,7 @@ export const loadApp = createAsyncThunk(
         const user = jwtDecode(token);
         console.log(user.id);
         const response = await Axios.get(
-          `http://localhost:6500/api/v1/user/${user.id}`
+          `https://farmish-api.herokuapp.com/api/v1/user/${user.id}`
         );
 
         //console.log(response.data.user);
