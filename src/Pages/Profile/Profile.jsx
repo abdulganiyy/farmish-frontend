@@ -65,7 +65,7 @@ const Profile = () => {
       useEffect(() => {
         
       const fetchOrders = async () =>{
-         const response = await Axios.get(`http://localhost:6500/api/v1/order/${data.id}`)
+         const response = await Axios.get(`https://farmish-api.herokuapp.com/api/v1/order/${data.id}`)
          
          setOrders(response.data.orders)
       }

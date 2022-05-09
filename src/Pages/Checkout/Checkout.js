@@ -23,7 +23,7 @@ const Checkout = () => {
   const handlePaystackSuccessAction = (reference) => {
     console.log(reference);
 
-    Axios.post("http://localhost:6500/api/v1/order/", {
+    Axios.post("https://farmish-api.herokuapp.com/api/v1/order/", {
       user: currentUser._id,
       products: cart.map((product) => product._id),
       shippingAddress: address,

@@ -5,7 +5,9 @@ export const fetchProducts = createAsyncThunk(
   "shop/getProducts",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await Axios.get("http://localhost:6500/api/v1/product");
+      const response = await Axios.get(
+        "https://farmish-api.herokuapp.com/api/v1/product"
+      );
 
       return response.data.products;
     } catch (err) {
