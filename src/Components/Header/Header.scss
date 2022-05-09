@@ -1,0 +1,23 @@
+@import '../../scss/base/_variables.scss';
+@import '../../scss/base/_mixins.scss';
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+
+    
+}
+
+.cart__count{
+    position: absolute;
+    display: inline-block;
+    background-color: $primary-color;
+    color: white;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    text-align: center;
+    padding-bottom: .1rem ;
+    top: .6rem;
+}

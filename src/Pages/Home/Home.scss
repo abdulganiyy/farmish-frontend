@@ -1,0 +1,44 @@
+ @import '../../scss/base/_variables.scss';
+@import '../../scss/base/_mixins.scss';
+
+
+.hero{
+    position: relative;
+    height: 30rem;
+
+    &__content{
+        position: absolute;
+        inset: 0;
+        padding-top: 5rem;
+       
+
+       
+    }
+
+    &__title{
+       margin-bottom: 2rem;
+       font-size: 3rem;
+       color: $primary-color;
+    }
+
+   
+}
+
+.featured{
+    padding: 2rem;
+
+    &__products{
+        margin-top: 1rem;
+        display: block;
+        width: 100%;
+     
+        @include atTablet{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            gap: 1rem;
+        }
+     }
+}
+
+

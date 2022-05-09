@@ -1,0 +1,20 @@
+.product-card{
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: .5rem;
+
+    &__title{
+        margin-bottom: .5rem;
+    }
+
+    &__img-box{
+      height: 15rem;
+      border-radius: .5rem;
+      overflow: hidden;
+      margin-bottom: .5rem;
+    }
+
+    &__price{
+        margin-bottom: .5rem;
+    }
+}

@@ -1,0 +1,242 @@
+@import './scss/base/_mixins.scss';
+@import './scss/base/_variables.scss';
+
+
+html{
+  font-size: 10px;
+
+  @include atTablet{
+    font-size: 16px;
+  }
+}
+
+body{
+  font-family: 'Heebo', sans-serif;
+font-family: 'Roboto', sans-serif;
+}
+
+*,*::after,*::before{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.section{
+  padding: 2rem 0;
+}
+
+.title{
+  font-weight: 700;
+
+  &--mt{
+    margin-top: 1rem;
+  }
+
+  &--mb{
+    margin-bottom: 1rem;
+  }
+}
+
+.wrapper{
+  max-width: 1200px;
+  padding: 0 2rem;
+ 
+}
+
+.logo{
+  align-self: center;
+  color: #4dabf7;
+
+  
+
+  @include atTablet{
+    color: #4dabf7;
+
+    &--light{
+      color: white;
+      align-self: flex-start;
+    }
+  }
+ 
+}
+img{
+  width: 100%;
+  height: 100%;
+}
+
+button{
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+
+.btn{
+  background: $primary-color;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6dd5ed, $primary-color);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6dd5ed, $primary-color); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  border-radius: 1.5rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  
+}
+
+.link {
+  text-decoration: none;
+  color: #4dabf7;
+
+  &--light{
+    color: white;
+  }
+
+ &--mobile{
+   color: white;
+
+   @include atTablet{
+    color: #4dabf7;
+  }
+ }
+}
+
+.nav{
+  position: fixed;
+  z-index: 20;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s ease-in;
+  
+  width: 100vw;
+    height: 100vh;
+  
+
+  &--show{
+    visibility: visible;
+    opacity: 1;
+    color:white;
+    background-color: #4dabf7;
+   
+    
+  }
+
+  @include atTablet{
+   position: relative;
+   top: auto;
+   opacity: 1;
+   visibility: visible;
+   color: #4dabf7;
+   margin-right: 2rem;
+   width: auto;
+   height: auto;
+  }
+
+  ul{
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include atTablet{
+      display: block;
+    }
+  }
+
+  li{
+    display: block;
+    margin-right: 1rem;
+    position: relative;
+    padding: 1rem;
+    
+
+    @include atTablet{
+      display: inline-block;
+      height: 100%;
+    }
+  }
+}
+
+.harmburger{
+  width: 20px;
+  position: relative;
+  z-index: 100;
+  height: 19px;
+  align-self: center;
+  margin: 2rem;
+  cursor: pointer;
+
+  @include atTablet{
+  display: none;
+  }
+
+  
+  &::before{
+    content: '';
+    display: block;
+    height: 3px;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    background-color: #4dabf7;
+    transform-origin: 0% 0%;
+    transition: all .5s ease-in;
+
+  }
+
+  &__middle{
+    height: 3px;
+    width: 20px;
+    display: block;
+    position: absolute;
+    transform-origin: 0% 0%;
+    opacity: 1;
+    transition: all .5s ease-in;
+    top: 8px;
+    background-color: #4dabf7;
+  }
+
+  &::after{
+    content: '';
+    display: block;
+    height: 3px;
+    width: 20px;
+    position: absolute;
+    bottom: 0;
+    background-color: #4dabf7;
+    transform-origin: 0% 100%;
+    transition: all .5s ease-in;
+
+  }
+
+  &--close{
+    &::before{
+      transform: rotate(45deg) scale(1.2);
+      background-color: white;
+    }
+
+    .harmburger__middle{
+      opacity: 0;
+      transform: scale(0);
+      background-color: white;
+
+    }
+
+    .logo{
+      color: white;
+      position: relative;
+      z-index: 100;
+      top: auto;
+    }
+
+    &::after{
+      transform:translateY(.5px)  rotate(-45deg) scale(1.2);
+      background-color: white;
+
+    }
+  }
+}

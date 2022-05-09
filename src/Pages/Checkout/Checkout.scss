@@ -1,0 +1,45 @@
+@import '../../scss/base/_variables.scss';
+@import '../../scss/base/_mixins.scss';
+
+.checkout-page{
+    min-height: 65vh;
+    min-height: 65vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+
+.checkout-wrapper{
+    width: 100%;
+ 
+    @include atTablet{
+        width: 30%;
+    }
+ }
+ 
+.checkout-form{
+    &__group{
+        margin-bottom: .7rem;
+    }
+
+    &__input[type='radio']{
+        margin-right: .5rem;
+    }
+
+    &__input[type='text']{
+        border: 1px solid $primary-color;
+        padding: .5rem;
+        border-radius: 5px;
+        display: block;
+        margin-top: .5rem;
+        width: 100%;
+    }
+}
+
+.btn--pay{
+    background-color: $primary-color;
+    color: white;
+    padding: .7rem 2rem;
+    border-radius: 5px;
+}

@@ -1,0 +1,41 @@
+@import '../../scss/base/_variables.scss';
+@import '../../scss/base/_mixins.scss';
+
+.cart-page{
+    min-height: 65vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.cart-wrapper{
+   width: 100%;
+
+   @include atTablet{
+       width: 30%;
+   }
+}
+
+
+.cart-item{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid $primary-color;
+
+    &__img-box{
+        width:4rem;
+        height: 4rem;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    &__price{
+        margin-bottom: .5rem;
+    }
+
+    &__actions > p {
+        margin-bottom: .5rem;
+    }
+}

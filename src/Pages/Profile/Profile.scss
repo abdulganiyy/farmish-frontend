@@ -1,0 +1,60 @@
+@import '../../scss/base/_variables.scss';
+@import '../../scss/base/_mixins.scss';
+
+.profile-page{
+    min-height: 65vh;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+profile-wrapper{
+   width: 100%;
+
+   @include atTablet{
+       width: 30%;
+   }
+}
+
+.form{
+    &__group{
+        margin-top: 1rem;
+    }
+
+    &__input{
+        display: inline-block;
+        width: 100%;
+        margin-top: .5rem;
+        padding: .5rem;
+        outline: none;
+        border: 1px solid $primary-color;
+        border-radius: 5px;
+    }
+
+    &__file{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.avatar{
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.upload-new{
+    display: inline-block;
+    position: relative;
+    transform: translateY(-60%);
+    margin-left: .2rem;
+}
+
+.user-orders{
+    margin-top: 1rem;
+}
+
+.user-order{
+    margin-top: .5rem;
+}

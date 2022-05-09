@@ -1,0 +1,23 @@
+@import '../../scss/base/_variables.scss';
+@import '../../scss/base/_mixins.scss';
+
+.footer{
+    background-color: $primary-color;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    @include atTablet{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.site-map{
+  ul{
+      list-style: none;
+      margin-top: .5rem;
+  }
+}
+
+.contact p {
+    margin-top: .5rem;
+}
