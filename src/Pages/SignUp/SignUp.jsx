@@ -50,8 +50,7 @@ const SignUp = () => {
           </div>
           <div className='form__group'>
           <button className='btn' type='submit'>Sign Up</button>
-          </div>
-          
+          </div>   
         </form>
         <div  className='form__group'>
            Signed Up? <Link className='link' to='/login'>Login</Link>
