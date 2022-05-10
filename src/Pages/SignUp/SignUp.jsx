@@ -51,10 +51,11 @@ const SignUp = () => {
           <div className='form__group'>
           <button className='btn' type='submit'>Sign Up</button>
           </div>
-          <div  className='form__group'>
+          
+        </form>
+        <div  className='form__group'>
            Signed Up? <Link className='link' to='/login'>Login</Link>
           </div>
-        </form>
       </div>
     </div>
   )
