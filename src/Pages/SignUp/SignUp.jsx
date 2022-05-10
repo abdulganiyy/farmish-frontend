@@ -1,27 +1,55 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Link } from 'react-router-dom';
 import './SignUp.scss';
+import { useDispatch,useSelector } from 'react-redux'
+import { signupUser } from '../../slices/userSlice'
+import { Navigate } from 'react-router-dom'
+
 
 const SignUp = () => {
+  const dispatch = useDispatch();
+  const {currentUser,error} = useSelector(state => state.user)
+
+  const [data, setData] = useState({
+    username:'',
+    email:'',
+    password:''
+  })
+
+  const onChangeHandler = (e) => {
+    setData({
+      ...data,
+      [e.target.name]:e.target.value
+    })
+  }
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault()
+    dispatch(signupUser(data))
+  }
   return (
     <div className='signup-page'>
       <div className='form-wrapper'>
         <h3 className='title'>Sign Up Form</h3>
-        <form className='form'>
+        {error && <p>{error}</p>}
+      {currentUser && (
+          <Navigate to="/profile" replace={true} />
+        )}
+        <form className='form' onSubmit={onSubmitHandler}>
           <div className='form__group'>
            <label htmlFor='username' className='form__label'>Username</label>
-           <input id='username' className='form__input' type="text" placeholder='Enter your username' />
+           <input onChange={(e)=>onChangeHandler(e)} value={data.username} id='username' className='form__input' type="text" placeholder='Enter your username' />
           </div>
           <div className='form__group'>
            <label htmlFor='email' className='form__label'>Email</label>
-           <input id='email' type="email" placeholder='Enter your email' className='form__input'/>
+           <input onChange={(e)=>onChangeHandler(e)} value={data.email} id='email' type="email" placeholder='Enter your email' className='form__input'/>
           </div>
           <div className='form__group'>
            <label htmlFor='password' className='form__label'>Password</label>
-           <input id='password' className='form__input' type="password" placeholder='Enter your password' />
+           <input onChange={(e)=>onChangeHandler(e)} value={data.password} id='password' className='form__input' type="password" placeholder='Enter your password' />
           </div>
           <div className='form__group'>
-          <button className='btn'>Sign Up</button>
+          <button className='btn' type='submit'>Sign Up</button>
           </div>
           <div  className='form__group'>
            Signed Up? <Link className='link' to='/login'>Login</Link>

@@ -12,6 +12,11 @@
 }
 
 .site-map{
+    margin: .5rem 0;
+    @include atTablet{
+        margin:0;
+    }
+
   ul{
       list-style: none;
       margin-top: .5rem;
