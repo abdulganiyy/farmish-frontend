@@ -38,15 +38,15 @@ const SignUp = () => {
         <form className='form' onSubmit={onSubmitHandler}>
           <div className='form__group'>
            <label htmlFor='username' className='form__label'>Username</label>
-           <input onChange={(e)=>onChangeHandler(e)} value={data.username} id='username' className='form__input' type="text" placeholder='Enter your username' />
+           <input required onChange={(e)=>onChangeHandler(e)} name='username' value={data.username} id='username' className='form__input' type="text" placeholder='Enter your username' />
           </div>
           <div className='form__group'>
            <label htmlFor='email' className='form__label'>Email</label>
-           <input onChange={(e)=>onChangeHandler(e)} value={data.email} id='email' type="email" placeholder='Enter your email' className='form__input'/>
+           <input required onChange={(e)=>onChangeHandler(e)} name='email' value={data.email} id='email' type="email" placeholder='Enter your email' className='form__input'/>
           </div>
           <div className='form__group'>
            <label htmlFor='password' className='form__label'>Password</label>
-           <input onChange={(e)=>onChangeHandler(e)} value={data.password} id='password' className='form__input' type="password" placeholder='Enter your password' />
+           <input required onChange={onChangeHandler} name='password' value={data.password} id='password' className='form__input' type="password" placeholder='Enter your password' />
           </div>
           <div className='form__group'>
           <button className='btn' type='submit'>Sign Up</button>

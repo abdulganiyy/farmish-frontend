@@ -104,10 +104,10 @@ const Profile = () => {
          <input required onChange={(e)=>onChangeHandler(e)} id='phone' name='phone' value={data.phone} className='form__input' type="phone" placeholder='Enter your Phone Number' />
         </div>
         <div className='form__group'>
-        <label htmlFor='avatar' className='form__label'> {data.avatar !== null ? <img className='avatar' src={data.avatar} alt='user-avatar'/> : <FaRegUserCircle size={40} /> }
+        <label htmlFor='avatar' className='form__label'> {data.avatar ? <img className='avatar' src={data.avatar} alt='user-avatar'/> : <FaRegUserCircle size={40} /> }
         <span className='upload-new'>Select A Photo</span>
         <input type='file'  onChange={(e)=>onChangeFileHandler(e)} id='avatar' name='avatar' className='form__file' /> 
-        </label>
+        </label> 
         </div>
         <div className='form__group'>
         <button className='btn' type='submit'>Update</button>
