@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./Checkout.scss";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Axios from "axios";
+import { shopActions } from "../../slices/shopSlice";
 
 import { usePaystackPayment } from "react-paystack";
 
@@ -10,6 +11,7 @@ const getTotalPrice = (cart) => {
 };
 
 const Checkout = () => {
+  const dispatch = useDispatch();
   const [address, setAddress] = useState("");
   const { currentUser } = useSelector((state) => state.user);
   const { cart } = useSelector((state) => state.shop);
@@ -29,7 +31,9 @@ const Checkout = () => {
       shippingAddress: address,
       status: "processing",
     })
-      .then(() => {})
+      .then(() => {
+        dispatch(shopActions.clearCart());
+      })
       .catch((err) => {
         console.log(err);
       });

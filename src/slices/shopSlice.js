@@ -39,6 +39,9 @@ const shopSlice = createSlice({
     addShippingAddress: (state, action) => {
       state.shippingAddress = action.payload;
     },
+    clearCart: (state) => {
+      state.cart = [];
+    },
   },
   extraReducers: {
     [fetchProducts.pending]: (state) => {
